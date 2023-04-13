@@ -1,0 +1,282 @@
+@import "reset";
+
+@mixin styles($fw, $fs, $lh, $clr){
+    font-weight: $fw;
+    font-size: $fs;
+    line-height: $lh;
+    color: $clr;
+}
+
+.white{
+    background-color: #EEEFF1;;
+} 
+.blue{
+    background-color: #34547A;
+}
+
+
+$gray: #727272;
+$blue: #34547A;
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.container{
+    width: 1150px;
+    margin: 0 auto;
+}
+
+
+.header{
+    padding: 40px 0;
+    &-nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &-nav__item{
+        @include styles(500, 16px, 26px, #000000);
+        padding-left: 42px;
+        letter-spacing: 0.1em;
+        &:hover{
+            color: $blue;
+            transition: all .1s;
+        }
+    }
+    &-nav__img{
+        img{
+            max-width: 90px;
+        }
+    }
+    &-info{
+        padding: 135px 0;
+        display: flex;
+        justify-content: space-between;
+        &__img{
+            align-self: center;
+            padding-left: 80px;
+            img{
+                max-width: 357px;
+            }
+        }
+        &__text{
+            max-width: 541px;
+            .info-text__title{
+                @include styles(500, 48px, 79px, #000000);
+                padding-bottom: 50px;
+            }
+            .info-text__suptitle{
+                @include styles(400, 16px, 26px, $gray);
+                padding-bottom: 80px;
+
+            }
+            .info-text__btn{
+                @include styles(400, 16px, 26px, #FFFFFF);
+                background-color: $blue;
+                padding: 20px 35px;
+                transition: background .2s;
+                &:hover{
+                    color: $blue;
+                    background-color: #fff;
+                    transition: background .2s;
+                }
+            }
+        }
+    }
+}
+
+
+.wd{
+    margin: 0 auto;
+    text-align: center;
+    max-width: 540px;
+    padding: 90px 0;
+    &-title{
+        @include styles(500, 32px, 38px, #000000);
+        padding-bottom: 40px;
+    }
+    &-suptitle{
+        @include styles(400, 16px, 26px, $gray);
+        
+    }
+}
+
+
+.project {
+    display: flex;
+    justify-content: space-between;
+    padding: 80px 0;
+    &-item{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        &__img{
+            padding-right: 20px;
+            img{
+                max-width: 50px;
+            }
+        }
+        .item-text__title{
+            @include styles(500, 21px, 25px, #FFFFFF)
+        }
+        .item-text__suptitle{
+            @include styles(400, 16px, 26px, #FFFFFF)
+        }
+    }
+}
+
+
+.skills{
+    padding: 90px 0; 
+    display: flex;
+    justify-content: space-between;
+    &-text{
+        align-self: center;
+        width: 445px;
+        &__title{
+            @include styles(500, 32px, 38px, #000000);
+            padding-bottom: 45px;
+        }
+        &__progress{
+            display: flex;
+            flex-direction: column;
+            label{
+                padding-bottom: 15px;
+            }
+            progress {
+                background-color: #EEEFF1;
+                width: 100%;
+                height: 4px;
+                margin-bottom: 25px;
+              }
+        }
+    }
+    &-img{
+        img{
+            max-width: 555px;
+        }
+    }
+}
+
+progress::-webkit-progress-bar {
+    background-color: #C4C4C4;
+    border-radius: 7px;
+  }
+  progress::-webkit-progress-value {
+    background-color: $blue;
+    border-radius: 7px;
+  }
+
+
+.video {
+    padding-bottom: 90px;
+}
+
+
+.works{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    &-img{
+        position: relative;
+        height: 480px;
+        &:hover:before{
+            content: '';
+            background-image: url(../img/works/eye.png) ;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: #34537a56;
+        }
+        img{
+            width: 480px;
+            width: 100%;
+            height: 480px;
+
+        }
+    }
+}
+
+
+.microsoft{
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 0;
+}
+
+
+.message{
+    width: 540px;
+    margin: 0 auto;
+    padding-bottom: 100px;
+    &-title {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        &__name{
+            border: none;
+            padding: 15px 80px 15px 15px;
+        }
+        &__email{
+            border: none;
+            padding: 15px 80px 15px 15px;
+        }
+    }
+    &-suptitle{
+        padding: 20px 0 50px 0;
+        &__text{
+            border: none;
+            width: 100%;
+            padding: 15px 0 150px 15px;
+        }
+    }
+    &-btn{
+        text-align: center;
+    }
+    &-btn a{
+        @include styles(400, 14px, 23px, #FFFFFF);
+        background-color: $blue;
+        letter-spacing: 0.15em;
+        padding: 20px 45px;
+        transition: background .2s;
+        &:hover{
+            color: #34547A;
+            background-color: #fff;
+            transition: background .2s;
+        }
+        &:hover a{
+            transition: background .2s;
+            cursor: pointer;
+        }
+    }
+}
+
+.copyright{
+    padding: 30px 0;
+    display: flex;
+    justify-content: space-between;
+    &-text{
+        &__title{
+            @include styles(500, 21px, 25px, #FFFFFF);
+            padding-bottom: 15px;
+        }
+        &__suptitle{
+            @include styles(400, 13px, 21px, #FFFFFF);
+        }
+    }
+    &-images{
+        align-self: center;
+        &__img{
+            padding-left: 20px;
+           
+        }
+    }
+}
